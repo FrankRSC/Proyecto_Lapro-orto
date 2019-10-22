@@ -48,9 +48,9 @@ usuarioCtrl.updateUsuario = async (req, res) => {
 
 
 usuarioCtrl.deleteUsuario = async (req, res) => {
-   await pool.query('DELETE FROM links WHERE clave_cliente = ?', [req.params.id]);
+   const cliente = await pool.query('DELETE FROM cliente WHERE clave_cliente = ?', [req.params.id]);
    //res.redirect('/')
-   res.send('Eliminado')
+   res.send(cliente)
 }
 
 module.exports = usuarioCtrl;

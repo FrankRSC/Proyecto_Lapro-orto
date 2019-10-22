@@ -12,9 +12,9 @@ app.use(cors());
 app.use(express.json());
  
 // routes
-app.use('/api/users', require('./routes/users'))
-app.use('/api/notes', require('./routes/notes'))
+
 app.use('/api/usuarios', require('./routes/usuario'))
+app.use('/api/aparatos', require('./routes/aparatos'))
 
 
 module.exports = app;
