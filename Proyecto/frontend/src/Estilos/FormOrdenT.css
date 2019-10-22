@@ -1,8 +1,5 @@
 .ffl{
     width: 100%;
-    min-height: 100%;
-    height: auto !important;
-    position: fixed;
     top:0;
     left:0;
     padding: 0;
@@ -13,20 +10,45 @@
 .boxx{
     width: auto;
     padding: 40px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     background: #feffff;
     text-align: center;
 }
 
-.TT{
-    margin-left: 30px;
-    width: 225px;
-    height: 40px;
-
-}
 label{
     color: black;
+}
+.TrabR{
+    height: 80px;
+
+}
+.input{
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #3498db;
+    padding: 14px 10px;
+    width: 350px;
+    outline: none;
+    color: black;
+    border-radius: 24px;
+    transition: 0.25s;
+    height: 50px;
+
+}
+
+.input:focus{
+ width: 430px;
+ border-color: #2ecc71;
+}
+img{
+    height: 100px;
+    width: 100px;
+    margin-right: 20px;
+}
+
+h1{
+    margin-top: 25px;
+
 }
