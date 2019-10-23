@@ -37,7 +37,7 @@
         text-align: center;
 }
 
-.input{
+.input1{
     border: 0;
     background: none;
     display: block;
@@ -53,7 +53,7 @@
 
 }
 
-.input:focus{
+.input1:focus{
  width: 280px;
  border-color: #2ecc71;
 }

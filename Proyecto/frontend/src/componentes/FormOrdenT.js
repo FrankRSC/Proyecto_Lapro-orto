@@ -1,5 +1,5 @@
 import { Button, Row, Container, Col } from 'react-bootstrap';
-import 'bootstrap/dist/css/bootstrap.min.css';
+
 import React, { Component } from 'react'
 import '../Estilos/FormOrdenT.css'
 import Logo from '../Imagenes/logo.jpg'
@@ -34,9 +34,9 @@ export default class FormOrdenT extends Component {
         <form className="boxx">
         <div class="d-flex justify-content-center">
 
-                <img class="slideRight" src={Logo} />
+                <img class="slideRight imglogo" src={Logo} />
 
-                  <h1 class="slideLeft">Lapro-Orto</h1>
+                  <h1 class="slideLeft h1logo mt-4">Lapro-Orto</h1>
 
         </div>
         
@@ -45,13 +45,13 @@ export default class FormOrdenT extends Component {
               <Col>
                 <label>
                   Clinica:
-                <input type="text" name="value" id="defaultContactFormName" class="form-control mb-4; input" value={this.state.value} onChange={this.handleChange} />
+                <input type="text" name="value" id="defaultContactFormName" class="input" value={this.state.value} onChange={this.handleChange} />
                 </label>
               </Col>
               <Col>
                 <label>
                   Paciente:
-               <input type="text" class="form-control mb-4; input" name="value2" id="defaultContactFormName" />
+               <input type="text" class="input" name="value2" id="defaultContactFormName" />
                 </label></Col>
             </Row>
           </Container>
@@ -60,13 +60,13 @@ export default class FormOrdenT extends Component {
               <Col>
                 <label>
                   Fecha de salida:
-            <input type="text" name="value3" id="defaultContactFormName" class="form-control mb-4; input" value={this.state.value3} onChange={this.handleChange} />
+            <input type="text" name="value3" id="defaultContactFormName" class="input" value={this.state.value3} onChange={this.handleChange} />
                 </label>
               </Col>
               <Col>
                 <label>
                   Doctor:
-            <input type="text" name="value4" id="defaultContactFormName" class="form-control mb-4; input" value={this.state.value4} onChange={this.handleChange} />
+            <input type="text" name="value4" id="defaultContactFormName" class="input" value={this.state.value4} onChange={this.handleChange} />
                 </label>
               </Col>
             </Row>
@@ -76,13 +76,13 @@ export default class FormOrdenT extends Component {
               <Col>
                 <label>
                   Fecha de entrada:
-                  <input type="text" name="value5" id="defaultContactFormName" class="form-control mb-4; input" value={this.state.value5} onChange={this.handleChange} />
+                  <input type="text" name="value5" id="defaultContactFormName" class="input" value={this.state.value5} onChange={this.handleChange} />
                 </label>
               </Col>
               <Col>
                 <label>
                   Trabajo a realizar:
-                  <textarea type="text" name="value6" id="defaultContactFormName" class="form-control mb-4; input" style={{ height: "80px", textAlign: "left" }} value={this.state.value6} onChange={this.handleChange} />
+                  <textarea type="text" name="value6" id="defaultContactFormName" class="input" style={{ height: "80px", textAlign: "left" }} value={this.state.value6} onChange={this.handleChange} />
                 </label>
               </Col>
             </Row>
@@ -92,13 +92,13 @@ export default class FormOrdenT extends Component {
               <Col>
                 <label>
                   Color*:
-                  <input type="text" name="value7" id="defaultContactFormName" class="form-control mb-4; input" value={this.state.value7} onChange={this.handleChange} />
+                  <input type="text" name="value7" id="defaultContactFormName" class="input" value={this.state.value7} onChange={this.handleChange} />
                 </label>
               </Col>
               <Col>
                 <label>
                   Material:
-                  <select name="value8" class="browser-default custom-select mb-4; input" value={this.state.value8} onChange={this.handleChange} >
+                  <select name="value8" class="input" value={this.state.value8} onChange={this.handleChange} >
                     <option value="---">---</option>/>
               <option value="E-max">E-max</option>/>
               <option value="Metal Ceramico">Metal Ceramico</option>/>
@@ -114,13 +114,13 @@ export default class FormOrdenT extends Component {
               <Col>
                 <label>
                   Adjuntar foto del caso:
-                 <input type="file" name="value9" id="defaultContactFormName" class="form-control mb-4; input" value={this.state.value9} onChange={this.handleChange} />
+                 <input type="file" name="value9" id="defaultContactFormName" class="input" value={this.state.value9} onChange={this.handleChange} />
                 </label>
               </Col>
               <Col>
                 <label>
                   Observaciones:
-                 <input type="text" name="value10" id="defaultContactFormName" class="form-control mb-4; input" value={this.state.value10} onChange={this.handleChange} />
+                 <input type="text" name="value10" id="defaultContactFormName" class="input" value={this.state.value10} onChange={this.handleChange} />
                 </label>
               </Col>
             </Row>
@@ -130,18 +130,18 @@ export default class FormOrdenT extends Component {
               <Col>
                 <label>
                   E-mail:
-                  <input type="text" name="value11" id="defaultContactFormName" class="form-control mb-4; input" value={this.state.value11} onChange={this.handleChange} />
+                  <input type="text" name="value11" id="defaultContactFormName" class="input" value={this.state.value11} onChange={this.handleChange} />
                 </label>
               </Col>
               <Col>
                 <label>
                   Telefono:
-                  <input type="text" name="value12" id="defaultContactFormName" class="form-control mb-4; input" value={this.state.value12} onChange={this.handleChange} />
+                  <input type="text" name="value12" id="defaultContactFormName" class="input" value={this.state.value12} onChange={this.handleChange} />
                 </label>
               </Col>
             </Row>
           </Container>
-          <Button type="submit" value="Submit" variant="primary">Enviar Orden</Button>
+          <Button type="submit" className="btn blue-gradient" value="Submit" variant="primary">Enviar Orden</Button>
         </form>
       </div>
     );

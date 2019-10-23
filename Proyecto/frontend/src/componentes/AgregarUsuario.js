@@ -52,7 +52,6 @@ export default class AgregarUsuario extends Component {
                 corre: this.state.corre,
                 contraseña: this.state.contraseña
             })
-    
             e.preventDefault();
         }
         e.preventDefault();
@@ -134,35 +133,35 @@ export default class AgregarUsuario extends Component {
                                 <div className="row mt-4">
                                     <div className="col">
                                     <div style={{fontSize: '16px'}} className="text-center font-weight-bold text-danger mt-5">{this.state.nombreError}</div>
-                                        <input type="text" className="input" placeholder="Nombre" name="nombre" onChange={this.onChange} />
+                                        <input type="text" className="input1" placeholder="Nombre" name="nombre" onChange={this.onChange} />
                                     </div>
                                     <div className="col">
                                     <div style={{fontSize: '16px'}} className="text-center font-weight-bold text-danger mt-5">{this.state.apellidoPError}</div>
-                                        <input type="text" className="input" placeholder="Apellido Paterno" name="apellidoP" onChange={this.onChange}/>
+                                        <input type="text" className="input1" placeholder="Apellido Paterno" name="apellidoP" onChange={this.onChange}/>
                                     </div>
                                     <div className="col">
                                     <div style={{fontSize: '16px'}} className="text-center font-weight-bold text-danger mt-5">{this.state.apellidoFError}</div>
-                                        <input type="text" className="input" placeholder="Apellido Materno" name="apellidoF" onChange={this.onChange} />
+                                        <input type="text" className="input1" placeholder="Apellido Materno" name="apellidoF" onChange={this.onChange} />
                                     </div>
                                 </div>
                                 <div className="row mt-4">
                                     <div className="col">
                                     <div style={{fontSize: '16px'}} className="text-center font-weight-bold text-danger mt-5">{this.state.direccionError}</div>
-                                        <input type="text" className="input" placeholder="Direccion" name="direccion" onChange={this.onChange} />
+                                        <input type="text" className="input1" placeholder="Direccion" name="direccion" onChange={this.onChange} />
                                     </div>
                                     <div className="col">
                                     <div style={{fontSize: '16px'}} className="text-center font-weight-bold text-danger mt-5">{this.state.telefonoError}</div>
-                                        <input type="number" className="input" placeholder="Telefono" onChange={this.onChangeTelefono} />
+                                        <input type="number" className="input1" placeholder="Telefono" onChange={this.onChangeTelefono} />
                                     </div>
                                 </div>
                                 <div className="row mt-4 mb-4">
                                     <div className="col">
                                     <div style={{fontSize: '16px'}} className="text-center font-weight-bold text-danger mt-5">{this.state.correoError}</div>
-                                        <input type="text" className="input" placeholder="Correo" name="corre" onChange={this.onChange} />
+                                        <input type="text" className="input1" placeholder="Correo" name="corre" onChange={this.onChange} />
                                     </div>
                                     <div className="col">
                                     <div style={{fontSize: '16px'}} className="text-center font-weight-bold text-danger mt-5">{this.state.contraseñaError}</div>
-                                        <input type="password" className="input" placeholder="Contraseña" name="contraseña" onChange={this.onChange} />
+                                        <input type="password" className="input1" placeholder="Contraseña" name="contraseña" onChange={this.onChange} />
                                     </div>
                                 </div>
                                 <div className="modal-footer">

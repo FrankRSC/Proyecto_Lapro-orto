@@ -26,7 +26,7 @@ export default class MostrarUsuario extends Component {
         return (
             <div className="container" >
                 <div class="col-xs-12">
-                    <div class="center-block mt-5">
+                    <div class="center-block ">
                         <h4 className="modal-title">Lista de Clientes</h4>
                         <table className="table table-bordered">
                             <thead className="thead-dark text-center ">

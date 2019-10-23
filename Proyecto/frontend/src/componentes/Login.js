@@ -23,7 +23,7 @@ export default class Login extends Component {
             inputCorreo: '',
             inputPass: '',
             ruta: '/Login',
-            Bienvenida: "Valio verga",
+            Bienvenida: "Error al iniciar sesion",
             correoError:"",
             contraseñaError: ""
         }
@@ -50,7 +50,7 @@ export default class Login extends Component {
                 const { contraseña, nombre, apellidoP, corre } = datos.data[0];
     
                 if (inputPass === contraseña) {
-                    if (corre === 'correo@gmail.com') {
+                    if (corre === 'admin@hotmail.com') {
                         this.context.usuarios.Administrador = true
                         this.context.usuarios.SinUsuario = false;
                         this.context.nombreUsuario = nombre + " " + apellidoP

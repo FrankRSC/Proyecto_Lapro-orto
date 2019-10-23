@@ -1,9 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios';
 
-
-
-
 export default class Aparatos extends Component {
 
     state = {
@@ -14,19 +11,20 @@ export default class Aparatos extends Component {
         //api para hacer peticiones al servidor con put get
         const res = await axios.get('http://localhost:4000/api/aparatos')
         this.setState({ aparatos: res.data })
-        console.log(res)
+        console.log('hola')
     }
 
     render() {
-
+        console.log(this.state.aparatos)
         return (
-            <div className="container" style={{ height: '100vh' }}>
+            <div className="container">
                 <div class="row">
                     <div class="col center-block mt-2">
                         <h4 className="modal-title">Lista de Aparatos</h4>
                         <div class="form-row">
-                            <div class="col-6">
+                          
                                 {this.state.aparatos.map(apa =>
+                                  <div class="col-6">
                                     <div class="card mb-3 center-block mt-5" style={{ maxWidth: '540px' }}>
                                         <div class="row no-gutters">
                                             <div class="col-md-4">
@@ -40,8 +38,9 @@ export default class Aparatos extends Component {
                                             </div>
                                         </div>
                                     </div>
+                                    </div>
                                 )}
-                            </div>
+                           
                         </div>
 
                     </div>
@@ -51,3 +50,4 @@ export default class Aparatos extends Component {
         )
     }
 }
+

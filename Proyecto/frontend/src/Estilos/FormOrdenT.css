@@ -17,6 +17,7 @@
 label{
     color: black;
 }
+
 .TrabR{
     height: 80px;
 
@@ -42,13 +43,13 @@ label{
  width: 430px;
  border-color: #2ecc71;
 }
-img{
+.imglogo{
     height: 100px;
     width: 100px;
     margin-right: 20px;
 }
 
-h1{
+.h1logo{
     margin-top: 25px;
 
 }

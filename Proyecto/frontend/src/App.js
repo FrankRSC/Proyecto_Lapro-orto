@@ -2,16 +2,13 @@ import React from 'react';
 import { Route, BrowserRouter as Router } from 'react-router-dom'
 import Usuarios from './componentes/MostrarUsuario';
 import Login from './componentes/Login'
-<<<<<<< Updated upstream
-import SideBar from './componentes/Sidebar';
-import FormOrdenT from './componentes/FormOrdenT'
-import 'bootstrap/dist/css/bootstrap.min.css'
-=======
 import Menu from './componentes/NavbarAdmin'
 import Nav from './componentes/Navbar'
 import Aparatos from './componentes/Aparatos'
 import Jumbo from './componentes/jumbotron'
->>>>>>> Stashed changes
+import Contenido from './componentes/Contenido'
+import Contacto from './componentes/Contactanos'
+import Orden from './componentes/FormOrdenT'
 import './App.css';
 
 
@@ -23,24 +20,30 @@ export default class App extends React.Component {
 
     return (
       <Router>
-<<<<<<< Updated upstream
-      <Route exact path="/AgregarUsuario" component={AgregarUsuario}/>
-      <Route exact path="/" component={Login}/>
-      <Route exact path="/OrdendeTrabajo" component={FormOrdenT}/>
-      </Router>
-=======
-        <Route path="/"
+        <Route path="/Inicio"
           exact render={() => {
             return (
               <div>
                 <Nav Contenido={
                   [
-                    <Jumbo />
-
-
+                    <Contenido />
 
                   ]} />
 
+              </div>
+            );
+          }}
+        />
+         <Route path="/Contacto"
+          exact render={() => {
+            return (
+              <div>
+                <Nav Contenido={
+                  [
+                    <Contacto />
+
+                  ]} />
+               
               </div>
             );
           }}
@@ -61,7 +64,7 @@ export default class App extends React.Component {
                 <Nav Contenido={
                   [
 
-
+                    <Jumbo />
 
                   ]} />
               </div>
@@ -74,9 +77,9 @@ export default class App extends React.Component {
               <div>
                 <Nav Contenido={
                   [
-                    <Jumbo />
+                   
 
-
+                    <Contenido />
 
                   ]} />
               </div>
@@ -113,9 +116,24 @@ export default class App extends React.Component {
             );
           }} />
 
+      <Route path="/Orden"
+          exact render={() => {
+            return (
+              <div>
+                 <Nav Contenido={
+                  [
+                    <Orden/>
+
+
+                  ]} />
+                
+               
+              </div>
+            );
+          }} />
+
       </Router>
 
->>>>>>> Stashed changes
     );
   }
 }
