@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import fondo from '../Imagenes/imgJumbo.jpg';
 
 export default class jumbotron extends Component {
     componentDidMount() {
@@ -22,7 +23,7 @@ export default class jumbotron extends Component {
         return (
             <div>
                 <div class="jumbotron card card-image " style={{
-                    height: '100vh', backgroundImage: 'url(https://static.wixstatic.com/media/afaf46_d5f95f16a80a4f25a72bf4e0552db9ce~mv2.jpg/v1/fill/w_1600%2Ch_900%2Cal_c%2Cq_90/file.jpg',
+                    height: '100vh', backgroundImage: `url(${fondo})`,
                     backgroundSize: 'cover'
                 }}>
                     <div class="text-white text-center py-5 px-4">

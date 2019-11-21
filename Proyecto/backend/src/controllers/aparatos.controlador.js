@@ -1,5 +1,5 @@
 const aparatoCtrl = {};
-const pool = require('../database');
+const pool = require('../models/database');
 //importar el modelo de la base de datos que esta en el archivo aparato
 
 

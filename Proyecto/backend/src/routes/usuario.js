@@ -1,7 +1,7 @@
 const {Router} = require('express');
 const router = Router();
 
-const {getUsuarios, createUsuario, getUsuario,deleteUsuario,updateUsuario} = require('../controllers/usuario.controlador');
+const {getUsuarios,getUsuariobyid, createUsuario, getUsuario,deleteUsuario,updateUsuario} = require('../controllers/usuario.controlador');
 
 router.route('/')
     //Obtener
@@ -10,7 +10,10 @@ router.route('/')
     .post(createUsuario);
 
 router.route('/:id')
+    
     .get(getUsuario)
+    
+    
     //Actualizar algo en el servidor
     .put(updateUsuario)
     //Borrar

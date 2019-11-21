@@ -1,7 +1,7 @@
 require('dotenv').config();
 
 const app = require('./app')
-require('./database');
+require('./models/database');
 
 async function main(){
 

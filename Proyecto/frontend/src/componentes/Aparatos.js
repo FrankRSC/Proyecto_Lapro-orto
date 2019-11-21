@@ -11,7 +11,7 @@ export default class Aparatos extends Component {
         //api para hacer peticiones al servidor con put get
         const res = await axios.get('http://localhost:4000/api/aparatos')
         this.setState({ aparatos: res.data })
-        console.log('hola')
+        console.log(this.state.hola)
     }
 
     render() {

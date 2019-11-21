@@ -447,7 +447,39 @@ footer{
 }
 
 
+.border_or{
+  border: 3px solid #2183C4;
+border-radius: 8px 10px 15px 12px;
+}
 
+
+section .section-title {
+  text-align: center;
+  color: #007b5e;
+  text-transform: uppercase;
+}
+#tabs{
+
+  color: black;
+}
+#tabs h6.section-title{
+  color:black;
+}
+
+#tabs .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+  color: black;
+  background-color: transparent;
+  border-color: transparent transparent black;
+  border-bottom: 4px solid !important;
+  font-size: 20px;
+  font-weight: bold;
+}
+#tabs .nav-tabs .nav-link {
+  border: 1px solid transparent;
+
+  color: black;
+  font-size: 20px;
+}
 
 
 

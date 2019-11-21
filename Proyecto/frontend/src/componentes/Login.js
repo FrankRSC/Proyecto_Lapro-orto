@@ -2,16 +2,9 @@ import React, { Component } from 'react'
 import Ventana from './VentanaEmergente'
 import {MDBRow, MDBCol,MDBCardBody, MDBInput} from 'mdbreact';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 import '../Estilos/login.css'
 
-export const Appcontext = React.createContext({
-    usuarios: {
-        Administrador: false,
-        UsuarioComun: false,
-        SinUsuario: true
-    },
-    nombreUsuario: "",
-})
 
 export default class Login extends Component {
 
@@ -28,6 +21,12 @@ export default class Login extends Component {
             contraseñaError: ""
         }
 
+    }
+
+    componentDidMount(){
+        if(localStorage.getItem("id") != '10000'){
+            window.location.href = "http://localhost:3000/"
+        }
     }
 
 
@@ -47,19 +46,20 @@ export default class Login extends Component {
                 document.getElementById('info').innerHTML = "Usuario o contraseña inconrrecto "
                 this.setState({ Bienvenida: 'Error al iniciar sesion' })
             }else{
-                const { contraseña, nombre, apellidoP, corre } = datos.data[0];
+                const { contraseña, nombre, apellidoP, corre, clave_cliente } = datos.data[0];
     
                 if (inputPass === contraseña) {
                     if (corre === 'admin@hotmail.com') {
-                        this.context.usuarios.Administrador = true
-                        this.context.usuarios.SinUsuario = false;
-                        this.context.nombreUsuario = nombre + " " + apellidoP
+                        localStorage.setItem("Usuario", nombre + " " + apellidoP)
+                        localStorage.setItem("Correo", corre);
+                        localStorage.setItem("id", clave_cliente)
                         this.setState({ ruta: '/InicioAdmin' })
         
                     } else {
-                        this.context.usuarios.UsuarioComun = true
-                        this.context.usuarios.SinUsuario = false;
-                        this.context.nombreUsuario = nombre + " " + apellidoP
+
+                        localStorage.setItem("Usuario", nombre + " " + apellidoP)
+                        localStorage.setItem("Correo", corre);
+                        localStorage.setItem("id", clave_cliente)
                         this.setState({ ruta: '/InicioUsuarios' })
                     }
                     document.getElementById('info').innerHTML = "Bienvenido " + nombre + " " + apellidoP
@@ -107,6 +107,9 @@ export default class Login extends Component {
                     <div className="redondear" style={{ width: '28rem', background: 'white' }}>
                         <div className="header pt-3 blue-gradient redondeara">
                             <MDBRow className="d-flex justify-content-center">
+                           
+                                
+                            <i class="far fa-arrow-alt-circle-left white-text mr-3 mb-2 pt-3" style={{fontSize: 30}} onClick={()=>window.location.href = "http://localhost:3000/Inicio"}></i>
                                 <h3 className="white-text mb-3 pt-3 font-weight-bold">
                                     Iniciar Sesion
                                 </h3>
@@ -127,7 +130,7 @@ export default class Login extends Component {
                                 <MDBCol md="7" className="d-flex justify-content-end">
                                     <p className="font-small grey-text mt-3">
                                         <a href="#!" className="dark-grey-text ml-1 font-weight-bold">
-                                            Olvidaste tu contraseña
+                                            
                                         </a>
                                     </p>
                                 </MDBCol>
@@ -151,4 +154,3 @@ export default class Login extends Component {
 
     }
 }
-Login.contextType = Appcontext;

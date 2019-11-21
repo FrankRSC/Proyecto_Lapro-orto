@@ -1,28 +1,60 @@
 import React, { Component } from 'react'
 import axios from 'axios';
 import Registro from './AgregarUsuario'
+import Editar from './Editar'
+
 
 export default class MostrarUsuario extends Component {
 
     state = {
-        usuarios: []
+        usuarios: [],
+        id: '',
+        nombre: '',
+        apellidoP: '',
+        apellidoF: '',
+        direccion: '',
+        telefono: '',
+        corre: '',
+        contraseña: '',
     }
 
     async componentDidMount() {
         //api para hacer peticiones al servidor con put get
-        const res = await axios.get('http://localhost:4000/api/usuarios')
-        this.setState({ usuarios: res.data })
+        if(localStorage.getItem("id")  != '13'){
+            window.location.href = "http://localhost:3000/"
+        }else{
+            const res = await axios.get('http://localhost:4000/api/usuarios')
+            this.setState({ usuarios: res.data })
+        }
+        
     }
 
     delete = async (id) => {
-        console.log("hola")
-        await axios.delete('http://localhost:4000/api/usuarios/' + id)
-        window.location.reload();
+        if(id === 13){
+            alert('Este usuario no se puede eliminar')
+        }else{
+            await axios.delete('http://localhost:4000/api/usuarios/' + id)
+            window.location.reload();
+        }
+        
     }
 
-    
+    Obtener = async (id) => {
+        const { nombre,apellidoP,apellidoF,direccion,telefono,corre,contraseña,clave_cliente} = this.state.usuarios[id];
+        
+        this.setState({nombre:nombre})
+        this.setState({apellidoP:apellidoP})
+        this.setState({apellidoF:apellidoF})
+        this.setState({direccion:direccion})
+        this.setState({telefono:telefono})
+        this.setState({corre:corre})
+        this.setState({contraseña:contraseña})
+        this.setState({id:clave_cliente})
+     
+    }
 
     render() {
+        const { nombre,apellidoP,apellidoF,direccion,telefono,corre,contraseña,id} = this.state;
         return (
             <div className="container" >
                 <div class="col-xs-12">
@@ -41,7 +73,8 @@ export default class MostrarUsuario extends Component {
                                 </tr>
                             </thead>
                             <tbody className="text-center">
-                                {this.state.usuarios.map(user =>
+                                {this.state.usuarios.map((user,index) =>
+                                    
                                     <tr key={user.clave_cliente}>
                                         <th scope="row">{user.clave_cliente}</th>
                                         <td>{user.nombre}</td>
@@ -50,8 +83,8 @@ export default class MostrarUsuario extends Component {
                                         <td>{user.telefono}</td>
                                         <td>{user.corre}</td>
                                         <td>
-                                            <button className="btn btn-primary">Editar</button>
-                                            <button className="btn btn-danger ml-3 " onClick={() => this.delete(user.clave_cliente)}>Eliminar</button>
+                                            <button className="btn btn-primary" href="#Editar" onClick={() => this.Obtener(index)} data-toggle="modal" data-backdrop="false">Editar</button>
+                                            <button  className="btn btn-danger ml-3 " onClick={() => this.delete(user.clave_cliente)}>Eliminar</button>
                                         </td>
                                     </tr>
                                 )}
@@ -59,9 +92,10 @@ export default class MostrarUsuario extends Component {
                         </table> 
                         <button className="btn btn-primary float-right" href="#Registrar" data-toggle="modal" data-backdrop="false">Nuevo Usuario</button>
                         <Registro></Registro>
+                        <Editar nombre = {nombre} apellidoP = {apellidoP} apellidoF={apellidoF} direccion={direccion} telefono={telefono} corre={corre} contraseña={contraseña} id={id}></Editar>
                     </div>
                 </div>
-
+                             
             </div>
         )
     }

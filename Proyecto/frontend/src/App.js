@@ -1,17 +1,20 @@
 import React from 'react';
-import { Route, BrowserRouter as Router } from 'react-router-dom'
+import { Route, BrowserRouter as Router, Redirect } from 'react-router-dom'
 import Usuarios from './componentes/MostrarUsuario';
 import Login from './componentes/Login'
-import Menu from './componentes/NavbarAdmin'
+
 import Nav from './componentes/Navbar'
 import Aparatos from './componentes/Aparatos'
 import Jumbo from './componentes/jumbotron'
 import Contenido from './componentes/Contenido'
+import ContenidoUsuario from './componentes/ContenidoUsuario'
 import Contacto from './componentes/Contactanos'
+import Error from './componentes/Error'
 import Orden from './componentes/FormOrdenT'
+import Perfil from './componentes/Perfil'
+import OrdenesAdmin from './componentes/OrdenesAdmin'
+import ContenidoAdmin from './componentes/ContenidoAdmin'
 import './App.css';
-
-
 
 
 export default class App extends React.Component {
@@ -20,6 +23,20 @@ export default class App extends React.Component {
 
     return (
       <Router>
+        <Route path="/"
+          exact render={() => {
+            return (
+              <div>
+                <Nav Contenido={
+                  [
+                    <Error />
+
+                  ]} />
+
+              </div>
+            );
+          }}
+        />
         <Route path="/Inicio"
           exact render={() => {
             return (
@@ -34,7 +51,7 @@ export default class App extends React.Component {
             );
           }}
         />
-         <Route path="/Contacto"
+        <Route path="/Contacto"
           exact render={() => {
             return (
               <div>
@@ -43,7 +60,7 @@ export default class App extends React.Component {
                     <Contacto />
 
                   ]} />
-               
+
               </div>
             );
           }}
@@ -64,7 +81,7 @@ export default class App extends React.Component {
                 <Nav Contenido={
                   [
 
-                    <Jumbo />
+                    <ContenidoAdmin />
 
                   ]} />
               </div>
@@ -77,9 +94,8 @@ export default class App extends React.Component {
               <div>
                 <Nav Contenido={
                   [
-                   
 
-                    <Contenido />
+                    <ContenidoUsuario />
 
                   ]} />
               </div>
@@ -90,48 +106,78 @@ export default class App extends React.Component {
           exact render={() => {
             return (
               <div>
-                 <Nav Contenido={
+                <Nav Contenido={
                   [
                     <Usuarios />
 
 
                   ]} />
-               
+
               </div>
             );
           }} />
-          <Route path="/Aparatos"
+        <Route path="/Aparatos"
           exact render={() => {
             return (
               <div>
-                 <Nav Contenido={
+                <Nav Contenido={
                   [
-                    <Aparatos/>
+                    <Aparatos />
 
 
                   ]} />
-                
-               
+
+
               </div>
             );
           }} />
 
-      <Route path="/Orden"
+        <Route path="/Orden"
           exact render={() => {
             return (
               <div>
-                 <Nav Contenido={
+                <Nav Contenido={
                   [
-                    <Orden/>
+                    <Orden />
 
 
                   ]} />
-                
-               
+
+
               </div>
             );
           }} />
 
+        <Route path="/Perfil"
+          exact render={() => {
+            return (
+              <div>
+                <Nav Contenido={
+                  [
+                    <Perfil />
+
+
+                  ]} />
+
+
+              </div>
+            );
+          }} />
+        <Route path="/Ordenes"
+          exact render={() => {
+            return (
+              <div>
+                <Nav Contenido={
+                  [
+                   
+                    <OrdenesAdmin/>
+
+                  ]} />
+
+
+              </div>
+            );
+          }} />
       </Router>
 
     );

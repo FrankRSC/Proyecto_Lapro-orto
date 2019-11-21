@@ -8,16 +8,29 @@ import imagen3 from '../Imagenes/ortodoncia_3.jpg';
 import producto from '../Imagenes/producto.jpg';
 import producto1 from '../Imagenes/producto1.jpg';
 import producto2 from '../Imagenes/producto2.jpg';
+
+import { Link } from 'react-router-dom';
 import JUMBO from './jumbotron'
 
 export default class Contenido extends Component {
+    componentDidMount(){
+        localStorage.setItem("id", 10000)
+        
+        if(localStorage.getItem("id") != '10000'){
+            window.location.href = "http://localhost:3000/"
+        }
+    }
+
+
+    verAparatos = () => {
+        window.location.href = "http://localhost:3000/Aparatos"
+    }
+
     render() {
         return (
             <div className="body">
                 <div className="App">
                     <JUMBO/>
-
-
 
 
                     <div class="featurette-divider"></div>
@@ -100,7 +113,7 @@ export default class Contenido extends Component {
                                         <img src={producto} alt="Paris" width="400" height="300" />
                                         <p><strong>Paladar</strong></p>
                                         <p>Disponible!</p>
-                                        <button class="btn" data-toggle="modal" data-target="#myModal">mas informacion</button>
+                                        <button class="btn" onClick={this.verAparatos}>mas informacion</button>
                                     </div>
                                 </div>
                                 <div class="col-sm-4">
@@ -108,7 +121,7 @@ export default class Contenido extends Component {
                                         <img src={producto1} alt="New York" width="400" height="300" />
                                         <p><strong>Frenos</strong></p>
                                         <p>Disponible!</p>
-                                        <button class="btn" data-toggle="modal" data-target="#myModal">mas informacion</button>
+                                        <button class="btn" onClick={this.verAparatos}>mas informacion</button>
                                     </div>
                                 </div>
                                 <div class="col-sm-4">
@@ -116,7 +129,7 @@ export default class Contenido extends Component {
                                         <img src={producto2} alt="San Francisco" width="400" height="300" />
                                         <p><strong>Guardas</strong></p>
                                         <p>Disponible!</p>
-                                        <button class="btn" data-toggle="modal" data-target="#myModal">mas informacion</button>
+                                        <button class="btn" onClick={this.verAparatos}>mas informacion</button>
                                     </div>
                                 </div>
                             </div>
